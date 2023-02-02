@@ -3,7 +3,7 @@ import pandas as pd
 import os
 from google.cloud import storage
 from tempfile import NamedTemporaryFile
-from google.cloud import bigquery
+
 
 
 project_id = os.environ.get('GCP_PROJECT')
@@ -48,6 +48,9 @@ def data_processing(event, context):
 
 
     #definition of output i bq
+    file_name_out="klarity_monthly_"+year+month
     header = ["Provider", "Resource ID", "Monthly cost", "Application name", "Month", "Year"]
+
+    source_bucket.blob(f'tobqimport/{file_name_out}.csv').upload_from_string(cmd.to_csv(columns= header, index=False))
     
-    print(cmd)
+    #print(cmd)
