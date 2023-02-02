@@ -48,9 +48,9 @@ def data_processing(event, context):
 
 
     #definition of output i bq
-    file_name_out="klarity_monthly_"+year+month
+    file_name_out=f"klarity_monthly_{year}{month}.csv"
     header = ["Provider", "Resource ID", "Monthly cost", "Application name", "Month", "Year"]
 
-    source_bucket.blob(f'tobqimport/{file_name_out}.csv').upload_from_string(cmd.to_csv(columns= header, index=False))
+    source_bucket.blob("tobqimport/"+file_name_out).upload_from_string(cmd.to_csv(columns= header, index=False))
     
     #print(cmd)
