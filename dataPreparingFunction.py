@@ -53,4 +53,3 @@ def data_processing(event, context):
 
     source_bucket.blob("tobqimport/"+file_name_out).upload_from_string(cmd.to_csv(columns= header, index=False))
     
-    #print(cmd)
