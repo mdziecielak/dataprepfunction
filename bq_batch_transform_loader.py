@@ -90,5 +90,5 @@ job.result()  # Wait for the job to complete.
 
 
 #test data
-event={'name': "/Users/maciejdziecielak/vcode/githubproject/dataexamples/whb_01-02-2023.csv"}
+event={'name': "/whb_01-02-2023.csv"}
 bq_batch_transform_loader(event, "gcs")
