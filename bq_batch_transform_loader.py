@@ -4,7 +4,7 @@ import pandas as pd
 import os
 from google.cloud import bigquery
 
-##definition of env data (GPC project and )
+##definition of env data 
 
    
 
